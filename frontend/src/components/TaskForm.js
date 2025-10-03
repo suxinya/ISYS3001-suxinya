@@ -24,10 +24,10 @@ const TaskForm = ({ onTaskSubmit }) => {
   const validateForm = () => {
     const newErrors = {};
     if (!formData.taskTitle.trim()) {
-      newErrors.taskTitle = '任务标题不能为空';
+      newErrors.taskTitle = 'The task title cannot be empty';
     }
     if (formData.dueDate && isNaN(new Date(formData.dueDate).getTime())) {
-      newErrors.dueDate = '请选择有效的截止日期';
+      newErrors.dueDate = 'Please select a valid deadline';
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -60,10 +60,10 @@ const TaskForm = ({ onTaskSubmit }) => {
       border: '1px solid #eee', 
       borderRadius: '8px' 
     }}>
-      {/* 任务标题输入框 */}
+      {/* Task Title Input Box */}
       <div style={{ marginBottom: '15px' }}>
         <label htmlFor="taskTitle" style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>
-          任务标题 <span style={{ color: 'red' }}>*</span>
+          Task Title <span style={{ color: 'red' }}>*</span>
         </label>
         <input
           type="text"
@@ -77,16 +77,16 @@ const TaskForm = ({ onTaskSubmit }) => {
             border: errors.taskTitle ? '1px solid red' : '1px solid #ddd',
             borderRadius: '4px' 
           }}
-          placeholder="请输入任务标题（如：完成A2作业）"
+          placeholder="Please enter the task title"
         />
-        {/* 错误提示 */}
+        {/* Error message */}
         {errors.taskTitle && <p style={{ color: 'red', margin: '5px 0 0 0', fontSize: '12px' }}>{errors.taskTitle}</p >}
       </div>
 
-      {/* 任务描述输入框 */}
+      {/* Task Description Input Box */}
       <div style={{ marginBottom: '15px' }}>
         <label htmlFor="taskDescription" style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>
-          任务描述
+          Task Description
         </label>
         <textarea
           id="taskDescription"
@@ -101,14 +101,14 @@ const TaskForm = ({ onTaskSubmit }) => {
             minHeight: '80px',
             resize: 'vertical'
           }}
-          placeholder="请输入任务详情（可选）"
+          placeholder="Please enter task details (optional)"
         />
       </div>
 
-      {/* 截止日期选择器 */}
+      {/* Deadline selector */}
       <div style={{ marginBottom: '20px' }}>
         <label htmlFor="dueDate" style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>
-          截止日期
+          Deadline
         </label>
         <input
           type="date"
@@ -125,7 +125,7 @@ const TaskForm = ({ onTaskSubmit }) => {
         {errors.dueDate && <p style={{ color: 'red', margin: '5px 0 0 0', fontSize: '12px' }}>{errors.dueDate}</p >}
       </div>
 
-      {/* 提交按钮 */}
+      {/* Submit button */}
       <button
         type="submit"
         style={{ 
@@ -137,7 +137,7 @@ const TaskForm = ({ onTaskSubmit }) => {
           cursor: 'pointer' 
         }}
       >
-        创建任务
+        Create task
       </button>
     </form>
   );
