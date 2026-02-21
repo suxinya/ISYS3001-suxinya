@@ -1,0 +1,110 @@
+/* Reset default styles: Eliminate default margins and padding to avoid layout confusion */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensure padding does not expand the element */
+    font-family: Arial, sans-serif; /* Unified font */
+}
+
+/* Page background: Light gray to avoid harsh white */
+body {
+    background-color: #f5f5f5;
+    padding: 20px; /* Add space around the page edges */
+}
+
+/* Container: Center the content, limit width, add white background and shadow */
+.container {
+    max-width: 600px; /* Maximum width to prevent overly wide display on computers */
+    margin: 0 auto; /* Center horizontally */
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px; /* Rounded corners for a more attractive look */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Subtle shadow for a 3D effect */
+}
+
+/* Title style: Centered with space at the bottom */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #333;
+    margin: 20px 0 10px;
+    font-size: 18px;
+}
+
+/* Input area: Arrange input field and button horizontally */
+.input-area {
+    display: flex; /* Make child elements (input, button) side by side */
+    gap: 10px; /* Space between input field and button */
+    margin-bottom: 20px;
+}
+
+/* Input field style: Fill remaining width, add border and rounded corners */
+#taskInput {
+    flex: 1; /* Occupy remaining width of the input area */
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Button style: Green background, white text, darker on hover (interaction feedback) */
+#addBtn {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none; /* Remove default border */
+    border-radius: 4px;
+    cursor: pointer; /* Change cursor to pointer on hover to indicate clickability */
+    font-size: 16px;
+}
+
+#addBtn:hover {
+    background-color: #218838; /* Darken background on mouse hover */
+}
+
+/* Task list: Remove default bullet points */
+#taskList {
+    list-style: none; /* Remove default bullet points from ul */
+}
+
+/* Individual task item: Arrange horizontally (task text + delete button), center vertically */
+.task-item {
+    display: flex;
+    justify-content: space-between; /* Align task text to the left and delete button to the right */
+    align-items: center; /* Center vertically */
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee; /* Add horizontal line separator between each task item */
+    background-color: #fafafa;
+}
+
+/* Task text: Change cursor to pointer (indicate clickability for marking completion) */
+.task-text {
+    cursor: pointer;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Completed task style: Gray text + strikethrough */
+.task-text.completed {
+    color: #888;
+    text-decoration: line-through; /* Strikethrough line */
+}
+
+/* Delete button style: Red, darker on hover */
+.delete-btn {
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.delete-btn:hover {
+    background-color: #c82333;
+}
